@@ -1,7 +1,7 @@
 # MyTown — open dataset of US & Canadian local-government meetings
 
 Every city-council, board, and commission meeting we can find, machine-readable:
-**2,300+ municipalities, ~50,000 meetings**, AI plain-English briefs of the agendas,
+**2,400+ municipalities, ~50,000 meetings**, AI plain-English briefs of the agendas,
 decisions extracted from official minutes (vote tallies, dollar amounts), Spanish/French
 translations, and weekly town roundups. Built from the official meeting portals
 (Legistar, CivicPlus, eScribe, CivicWeb, PrimeGov, CivicClerk) and refreshed daily.
@@ -55,6 +55,32 @@ JOIN municipalities mu ON mu.id = m.muni_id
 WHERE d.tags LIKE '%housing%' AND m.meeting_date >= date('now','-30 days')
 ORDER BY m.meeting_date DESC;
 ```
+
+## Embed & API (single city, live)
+
+Don't need the whole dataset — just one town on your site? Every city has two live
+endpoints, rebuilt hourly. Full guide: [mytown.theboringparts.com/docs](https://mytown.theboringparts.com/docs/).
+
+**Embed a city (no code)** — a self-contained, responsive iframe widget:
+
+```html
+<iframe src="https://mytown.theboringparts.com/city/CITY-SLUG/embed/"
+        width="100%" height="600" loading="lazy"
+        style="border:1px solid #ddd;border-radius:8px"
+        title="City government meetings"></iframe>
+```
+
+**Per-city JSON** — CORS-open (`Access-Control-Allow-Origin: *`), so you can call it
+straight from the browser:
+
+```js
+const r = await fetch("https://mytown.theboringparts.com/city/cityofpaloalto/meetings.json");
+const { city, state, upcoming, recent } = await r.json();
+// each meeting: { date, body, headline, summary, agenda_url, minutes_url, source }
+```
+
+`CITY-SLUG` is the last part of a city's page URL (e.g. `/city/cityofpaloalto/`), or grab
+the ready-made snippet from the "🔗 Embed this city" box on any city page.
 
 ## Caveats
 
