@@ -94,3 +94,9 @@ the ready-made snippet from the "🔗 Embed this city" box on any city page.
 
 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Use it for research, journalism,
 apps, or model training — credit **MyTown / theboringparts.com** with a link.
+
+## Support
+
+Free to use, free to fork, no ads, no paywall. If this saves you time,
+[buy us a coffee ☕](https://buymeacoffee.com/theboringparts) — it keeps the servers,
+GPUs, and AI running so the data stays free and current.
