@@ -18,7 +18,7 @@ to read. The site is free; the data behind it is too.
 One gzipped SQLite file, updated daily:
 
 ```bash
-curl -LO https://pub-2717a101da7049ca96829c79e6e77ce6.r2.dev/data/mytown.db.gz
+curl -LO https://archive.theboringparts.com/data/mytown.db.gz
 gunzip mytown.db.gz
 sqlite3 mytown.db '.tables'
 ```
@@ -39,7 +39,7 @@ Also mirrored on Hugging Face: [`jazzypajamas/mytown-local-gov-meetings`](https:
 
 **Archived documents:** we mirror every agenda PDF we process. A meeting's
 `archived_pdf_key` resolves to
-`https://pub-2717a101da7049ca96829c79e6e77ce6.r2.dev/<key>` — documents stay available
+`https://archive.theboringparts.com/<key>` — documents stay available
 even after a city purges its portal.
 
 ## Sample queries
