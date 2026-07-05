@@ -68,7 +68,11 @@ endpoints, rebuilt hourly. Full guide: [mytown.theboringparts.com/docs](https://
         width="100%" height="600" loading="lazy"
         style="border:1px solid #ddd;border-radius:8px"
         title="City government meetings"></iframe>
+<p>Local government meetings via <a href="https://mytown.theboringparts.com/city/CITY-SLUG/">MyTown</a></p>
 ```
+
+Keep that credit line under the iframe — it's the CC BY attribution, and a plain
+text link (unlike an iframe) is what actually passes a backlink.
 
 **Per-city JSON** — CORS-open (`Access-Control-Allow-Origin: *`), so you can call it
 straight from the browser:
